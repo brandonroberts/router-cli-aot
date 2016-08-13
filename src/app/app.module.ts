@@ -1,5 +1,5 @@
 // #docregion
-import { NgModule }       from '@angular/core';
+import { NgModule, NgModuleFactoryLoader } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 
@@ -12,6 +12,8 @@ import { HeroesModule } from './heroes/heroes.module';
 import { LoginComponent } from './login.component';
 
 import { DialogService }  from './dialog.service';
+
+import { AsyncNgModuleLoader } from './shared/async-ng-module-loader';
 
 @NgModule({
   imports: [
@@ -26,7 +28,9 @@ import { DialogService }  from './dialog.service';
   ],
   providers: [
     appRoutingProviders,
-    DialogService
+    DialogService,
+    // Add to main providers
+    { provide: NgModuleFactoryLoader, useClass: AsyncNgModuleLoader }
   ],
   bootstrap: [ AppComponent ]
 })

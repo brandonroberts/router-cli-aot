@@ -8,6 +8,8 @@ import { loginRoutes,
 
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 
+import {load} from './shared/async-ng-module-loader';
+
 // #docregion lazy-load-crisis-center
 const crisisCenterRoutes: Routes = [
   {
@@ -16,9 +18,13 @@ const crisisCenterRoutes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'crisis-center',
-    loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule'
-  }
+    path: 'lazy',
+    loadChildren: load(() => new Promise(resolve => {
+        (require as any).ensure([], require => {
+          resolve(require('./crisis-center/crisis-center.module').CrisisCenterModule);
+        });
+      }))
+  },
 ];
 
 const appRoutes: Routes = [
