@@ -2,20 +2,20 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
+import { RouterModule }   from '@angular/router';
 
 import { HeroListComponent }    from './hero-list.component';
 import { HeroDetailComponent }  from './hero-detail.component';
 
 import { HeroService } from './hero.service';
 
-// #docregion heroes-routes
-import { heroesRouting } from './heroes.routing';
+import { heroesRoutes } from './heroes.routing';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    heroesRouting
+    RouterModule.forChild(heroesRoutes)
   ],
   declarations: [
     HeroListComponent,

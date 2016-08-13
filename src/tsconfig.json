@@ -16,5 +16,9 @@
     "types": [
       "jasmine"
     ]
-  }
+  },
+  "angularCompilerOptions": {
+     "genDir": ".",
+     "debug": true
+   }  
 }
