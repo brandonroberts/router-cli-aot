@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  encapsulation: ViewEncapsulation.None,
+  template: `
+    <h1 class="title">Component Router</h1>
+    <nav>
+      <a routerLink="/crisis-center" routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">Crisis Center</a>
+      <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+      <a routerLink="/crisis-center/admin" routerLinkActive="active">Crisis Admin</a>
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
+  styleUrls: ['styles.css']
 })
 export class AppComponent {
-  title = 'app works!';
 }

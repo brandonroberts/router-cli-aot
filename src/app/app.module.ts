@@ -1,22 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
+// #docregion
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+
+import { AppComponent }       from './app.component';
+import { routing,
+         appRoutingProviders } from './app.routing';
+
+import { HeroesModule } from './heroes/heroes.module';
+
+import { LoginComponent } from './login.component';
+
+import { DialogService }  from './dialog.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    CommonModule,
-    FormsModule
+    FormsModule,
+    routing,
+    HeroesModule
   ],
-  providers: [],
-  entryComponents: [AppComponent],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    LoginComponent
+  ],
+  providers: [
+    appRoutingProviders,
+    DialogService
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
-
 }
+// #enddocregion
