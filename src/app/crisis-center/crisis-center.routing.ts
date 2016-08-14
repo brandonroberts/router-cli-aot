@@ -1,6 +1,7 @@
 // #docplaster
 // #docregion
-import { Routes }  from '@angular/router';
+import { ModuleWithProviders }   from '@angular/core';
+import { Routes, RouterModule }  from '@angular/router';
 
 import { CrisisCenterComponent } from './crisis-center.component';
 import { CrisisDetailComponent } from './crisis-detail.component';
@@ -16,6 +17,11 @@ import { CrisisDetailResolve }   from './crisis-detail-resolve.service';
 
 // #docregion lazy-load-crisis-center
 export const crisisCenterRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: '/crisis-center',
+    pathMatch: 'full'
+  },
   {
     path: 'crisis-center',
     component: CrisisCenterComponent,
@@ -44,5 +50,7 @@ export const crisisCenterRoutes: Routes = [
     ]
   }
 ];
+
+export const crisisCenterRouting: ModuleWithProviders = RouterModule.forChild(crisisCenterRoutes);
 // #enddocregion lazy-load-crisis-center
 // #enddocregion
