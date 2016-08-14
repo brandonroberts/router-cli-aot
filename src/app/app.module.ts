@@ -7,7 +7,6 @@ import { AppComponent }       from './app.component';
 import { appRoutingProviders } from './app.routing';
 
 import { HeroesModule } from './heroes/heroes.module';
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 import { LoginComponent } from './login.component';
 
@@ -22,8 +21,7 @@ import { routing } from './app.routing';
     BrowserModule,
     FormsModule,
     routing,
-    HeroesModule,
-    CrisisCenterModule
+    HeroesModule
   ],
   declarations: [
     AppComponent,

@@ -19,11 +19,6 @@ import { CrisisDetailResolve }   from './crisis-detail-resolve.service';
 export const crisisCenterRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/crisis-center',
-    pathMatch: 'full'
-  },
-  {
-    path: 'crisis-center',
     component: CrisisCenterComponent,
     children: [
       // #docregion admin-route
