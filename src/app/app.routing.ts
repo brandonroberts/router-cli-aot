@@ -20,12 +20,8 @@ export const crisisCenterRoutes: Routes = [
   },
   {
     path: 'crisis-center',
-    loadChildren: load(() => new Promise(resolve => {
-        (require as any).ensure([], require => {
-          resolve(require('./crisis-center/crisis-center.module').CrisisCenterModule);
-        });
-      }))
-  },
+    loadChildren: load(() => require('es6-promise!./crisis-center/crisis-center.module')('CrisisCenterModule'))
+  }
 ];
 
 export const appRoutes: Routes = [
