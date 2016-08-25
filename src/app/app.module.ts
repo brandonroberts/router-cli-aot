@@ -12,8 +12,6 @@ import { LoginComponent } from './login.component';
 
 import { DialogService }  from './dialog.service';
 
-import { AsyncNgModuleLoader } from './shared/async-ng-module-loader';
-
 import { routing } from './app.routing';
 
 @NgModule({
@@ -29,9 +27,7 @@ import { routing } from './app.routing';
   ],
   providers: [
     appRoutingProviders,
-    DialogService,
-    // Add to main providers
-    { provide: NgModuleFactoryLoader, useClass: AsyncNgModuleLoader }
+    DialogService
   ],
   bootstrap: [ AppComponent ]
 })

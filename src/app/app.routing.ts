@@ -9,7 +9,9 @@ import { loginRoutes,
 
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 
-import { load } from './shared/async-ng-module-loader';
+export function loadCrisisCenter() {
+  return require('es6-promise!./crisis-center/crisis-center.module')('CrisisCenterModule');
+}
 
 // #docregion lazy-load-crisis-center
 export const crisisCenterRoutes: Routes = [
@@ -20,7 +22,7 @@ export const crisisCenterRoutes: Routes = [
   },
   {
     path: 'crisis-center',
-    loadChildren: load(() => require('es6-promise!./crisis-center/crisis-center.module')('CrisisCenterModule'))
+    loadChildren: loadCrisisCenter
   }
 ];
 
