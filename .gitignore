@@ -32,5 +32,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
+#ngc artifacts
 *.ngfactory.ts
 *.css.ts

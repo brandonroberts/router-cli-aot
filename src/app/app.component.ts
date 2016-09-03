@@ -12,8 +12,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       <a routerLink="/login" routerLinkActive="active">Login</a>
     </nav>
     <router-outlet></router-outlet>
-  `,
-  styleUrls: ['styles.css']
+  `
 })
 export class AppComponent {
 }

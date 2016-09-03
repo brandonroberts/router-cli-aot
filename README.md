@@ -1,6 +1,6 @@
 # Router Developer Guide
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.2.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.8.
 
 An example of using AoT compilation using the router developer guide code as a base.
 
