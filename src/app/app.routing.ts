@@ -10,7 +10,7 @@ import { loginRoutes,
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 
 export function loadCrisisCenter() {
-  return require('es6-promise!./crisis-center/crisis-center.module')('CrisisCenterModule');
+  return System.import('./crisis-center/crisis-center.module').then(module => module.CrisisCenterModule);
 }
 
 // #docregion lazy-load-crisis-center
