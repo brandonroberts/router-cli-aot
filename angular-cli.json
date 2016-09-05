@@ -17,9 +17,7 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [
-        "../node_modules/systemjs/dist/system.src.js"
-      ],
+      "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
         "prod": "environments/environment.prod.ts",
